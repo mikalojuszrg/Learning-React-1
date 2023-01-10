@@ -1,70 +1,22 @@
+import { useState } from "react";
 import "./App.css";
-import AnimalCard from "./components/AnimalCard/AnimalCard";
-import Avatar from "./components/Avatar/Avatar";
-import Hero from "./components/Hero/Hero";
-import MainSection from "./components/MainSection/MainSection";
-import MenuList from "./components/MenuList/MenuList";
-import MoodChecker from "./components/MoodChecker/MoodChecker";
+import Product from "./components/Product/Product";
+import ProductButton from "./components/ProductButton/ProductButton";
 
-const single = ["Burger", "Fries", "Pizza"];
-const couple = ["Drinks", "Dessert", "Soup"];
-const family = ["BigBurger", "BigDessert", "BigFries"];
-
-const avatarsArray = [
-  { backgroundColor: "red", color: "white", text: "YO" },
-  { backgroundColor: "blue", color: "white", text: "LOL" },
-  { backgroundColor: "yellow", color: "black", text: "YES" },
-];
-
-const animals = [
-  {
-    imageUrl: "https://picsum.photos/200/150",
-    title: "Animal1",
-    subtitle:
-      "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-  },
-  {
-    imageUrl: "https://picsum.photos/200/150",
-    title: "Animal2",
-    subtitle:
-      "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-  },
-  {
-    imageUrl: "https://picsum.photos/200/150",
-    title: "Animal2",
-    subtitle:
-      "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-  },
-];
-
-const avatarsDisplayed = avatarsArray.map((avatar) => {
-  return (
-    <Avatar
-      backgroundColor={avatar.backgroundColor}
-      color={avatar.color}
-      children={avatar.text}
-    />
-  );
-});
-
-const animalCards = animals.map((animal) => {
-  return <AnimalCard {...animal} />;
-});
-
-console.log(avatarsDisplayed);
+const productInfo = {
+  image: "https://per4mmedia.com/wp-content/uploads/2021/11/mk2-2022-IG.jpg",
+  title: "Volwswagen GOLF MK2 2022 Calendar",
+  price: "10.00$",
+  description:
+    "12 unique designs  \n All pieces printed on heavyweight 200 gsm art paper  \n Limited to 50 pieces  \n One size: 11.7x16.5inch/(420x420mm)",
+  availability: "AVAILABILITY: in stock",
+  category: "Calendars",
+};
 
 function App() {
   return (
     <div className="App">
-      <Hero title="Title" description="Some description some descript" />
-      <MainSection
-        title="Portfolio"
-        description=" Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum "
-      />
-      <MenuList customerType={couple} />
-      {avatarsDisplayed}
-      {animalCards}
-      <MoodChecker />
+      <Product {...productInfo} />
     </div>
   );
 }
