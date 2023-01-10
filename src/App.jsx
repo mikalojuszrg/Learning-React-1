@@ -1,7 +1,5 @@
-import { useState } from "react";
 import "./App.css";
 import Product from "./components/Product/Product";
-import ProductButton from "./components/ProductButton/ProductButton";
 
 const productInfo = {
   image: "https://per4mmedia.com/wp-content/uploads/2021/11/mk2-2022-IG.jpg",
